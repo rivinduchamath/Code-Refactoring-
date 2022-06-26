@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Querys xmlns="">
+    <!-- Create Table Employee -->
+    <query id="create_table_employees">
+        <![CDATA[
+        	 CREATE TABLE employees(
+        	 EmployeeID varchar(10) not null,
+        	 Fullname varchar(25),
+        	 Address  varchar(50),
+        	 Faculty varchar(20),
+        	 Department varchar(25),
+        	 Designation varchar(20),
+        	 primary key (EmployeeID))
+        ]]>
+    </query>
+
+    <!-- Drop IF Existing Table -->
+    <query id="drop_table_employees">
+        <![CDATA[
+        	 DROP TABLE IF EXISTS employees
+         ]]>
+    </query>
+
+    <!-- Data Enter to Employee Table -->
+    <query id="insert_into_employees">
+        <![CDATA[
+        	insert into employees (
+        	EmployeeID,
+        	Fullname,
+        	Address,
+        	Faculty,
+        	Department,
+        	Designation)
+        	values (?, ?, ?, ?, ?, ?)
+        ]]>
+    </query>
+
+    <!-- Select All Data From Selected Employee -->
+    <query id="select_employee_where_id">
+        <![CDATA[
+         	select * from employees where EmployeeID = ?
+         ]]>
+    </query>
+
+    <!-- Select All Data From Employee Table -->
+    <query id="select_all_employee">
+        <![CDATA[
+         	 select * from employees
+         ]]>
+    </query>
+
+    <!-- Delete Selected Employee -->
+    <query id="delete_employee_by_id">
+        <![CDATA[
+         	delete from employees where EmployeeID = ?
+         ]]>
+    </query>
+</Querys>
